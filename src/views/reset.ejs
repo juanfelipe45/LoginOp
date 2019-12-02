@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%include partials/header%>
+    <title>Password</title>
+</head>
+<body class="forgot">
+    <div class="container">
+        <div class="col-sm-6 mx-auto">
+            <div class="card mt-5">
+                <div class="card-body">
+                        <% if(message.length > 0) {%>
+                            <div class="alert alert-danger">
+                                <%= message %>
+                            </div>
+                        <% } %>
+                    <h1 class="text-center"> <span class="fa fa-lock"></span> Cambiar Clave</h1>
+                    <form method="POST" id="forgot">
+                        <div class="form-group">
+                            <label for="newPassword">Nueva Clave</label>
+                            <input type="password" name="newPassword" id="newPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Clave</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="email" id="email" class="form-control" value="1">
+                        </div>
+                        <input type="submit" class="btn btn-dark btn-lg" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partials/header %>
+    <title>Users</title>
+</head>
+<body>
+    <div class="container">
+        <% include ./header/nav %>
+        <div class="row">
+                <% for (var i in users) {%>
+                    <%if (users[i].local.rol != "administrador") { %>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <span class="fa fa-user"></span><%= users[i].local.rol %>
+                                </h3> 
+                                <p>
+                                <strong>Nombre: </strong> <%= users[i].local.name%> <%= users[i].local.lastname%> <br>
+                                <strong>Correo</strong> <%= users[i].local.email %><br>
+                                <strong>Telefono</strong> <%= users[i].local.cellphone %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                <% }%>  
+        </div> 
+    </div>
+</body>
+</html>

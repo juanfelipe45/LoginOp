@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Node</title>
+    <% include ../partials/header %>
+</head>
+<body class="profile-admin">
+    <div class="container">
+        <% include ./header/nav %>
+        <hr>
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <span class="fa fa-user"></span> Administrador
+                        </h3> 
+                        <p>
+                            <strong>Bienvenido: </strong> <%= user.local.name%> <%= user.local.lastname%> <br>
+                            <strong><%= user.local.email %></strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

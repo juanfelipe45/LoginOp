@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%include partials/header%>
+    <title>Password</title>
+</head>
+<body class="forgot">
+    <div class="container">
+        <div class="col-sm-6 mx-auto">
+            <div class="card mt-5">
+                <div class="card-body">
+                        <% if(message.length > 0) {%>
+                            <div class="alert alert-danger">
+                                <%= message %>
+                            </div>
+                        <% } %>
+                    <h1 class="text-center"> <span class="fa fa-key"></span> Restablecer Contraseña</h1>
+                    <form action="/forgot" method="POST" id="forgot">
+                        <div class="form-group">
+                            <label for="email">Correo</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="password" id="password" class="form-control" value="1">
+                        </div>
+                        <input type="submit" class="btn btn-dark btn-lg" value="Enviar">
+                    </form>
+                    <hr>
+                    <div class="text-center" id="footer">
+                        <p>¿Necesitas una cuenta? Registrate <a href="/signup">AQUÍ</a></p>
+                        <p>¿Quieres <a href="/login">inciar sesion</a>?</p>
+                        <p>O ir al <a href="/">inicio</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
